@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "watch": "webpack-dev-server --inline --hot --port 3141",
-    "build": "webpack"
+    "build": "webpack",
+    "lint": "eslint src/ webpack.config.js"
   },
   "author": "Gio d'Amelio",
   "license": "MIT",
