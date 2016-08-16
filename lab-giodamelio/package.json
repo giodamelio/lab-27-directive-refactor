@@ -4,12 +4,21 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "webpack-dev-server --inline --hot --port 3141",
+    "build": "webpack"
   },
   "author": "Gio d'Amelio",
   "license": "MIT",
   "devDependencies": {
-    "@giodamelio/eslint-config": "^0.1.0",
-    "eslint": "^3.3.1"
+    "@giodamelio/eslint-config": "^0.2.1",
+    "css-loader": "^0.23.1",
+    "eslint": "^3.3.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   }
 }
