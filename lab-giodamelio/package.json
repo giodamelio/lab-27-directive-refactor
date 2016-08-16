@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gio d'Amelio",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@giodamelio/eslint-config": "^0.1.0",
+    "eslint": "^3.3.1"
+  }
 }
