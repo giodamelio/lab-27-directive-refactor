@@ -24,6 +24,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "angular": "^1.5.8",
     "normalize.css": "^4.2.0"
   }
 }
