@@ -8,9 +8,13 @@
   <link rel="stylesheet" href="bundle.css">
 </head>
 <body>
-  <div ng-controller="say">
-    <input type="text" ng-model="text">
-    <p>{{ text }}</p>
-  </div>
+  <main ng-controller="CowsayController" >
+    <form novalidate ng-submit="save()">
+      <input type="text" ng-model="text">
+      <input type="submit" value="Save">
+    </form>
+    <pre>{{ say(text) }}</pre>
+    <pre>{{ result }}</pre>
+  </main>
 </body>
 </html>
