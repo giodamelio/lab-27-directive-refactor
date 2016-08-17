@@ -24,6 +24,11 @@ app.controller('GameController', ['$scope', function($scope) {
     $scope.gameCtl.player = playerInfo;
     $scope.gameCtl.player.isCreated = true;
   };
+
+  $scope.gameCtl.createMonster = function(monsterInfo) {
+    $scope.gameCtl.monster = monsterInfo;
+    $scope.gameCtl.monster.isCreated = true;
+  };
 }]);
 
 // Custom filter to convert strings to titlecase

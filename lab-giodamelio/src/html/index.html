@@ -62,7 +62,41 @@
         </ul>
       </section>
     </section>
-    <section class="col col2">2nd Column</section>
+
+    <section class="col col2">
+      <form
+        name="monsterForm"
+        ng-submit="gameCtl.createMonster(monsterForm.monster)"
+        ng-hide="gameCtl.monster.isCreated"
+        novalidate>
+
+        <label>
+          Name:
+          <input type="text" name="name" ng-model="monsterForm.monster.name">
+        </label>
+
+        <label>
+          Hitpoints:
+          <input
+            type="number"
+            name="hitpoints"
+            ng-model="monsterForm.monster.hitpoints">
+        </label>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <section ng-show="gameCtl.monster.isCreated">
+        <ul>
+          <li>
+            <strong>Name:</strong> {{ gameCtl.monster.name | titlecase }}
+          </li>
+          <li>
+            <strong>Hitpoints:</strong> {{ gameCtl.monster.hitpoints }}
+          </li>
+        </ul>
+      </section>
+    </section>
   </main>
 </body>
 </html>
