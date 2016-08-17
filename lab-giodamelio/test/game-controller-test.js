@@ -17,6 +17,15 @@ describe('testing game-controller', function() {
     expect(this.scope.gameCtl.player.gender).toBe('male');
     expect(this.scope.gameCtl.player.race).toBe('gnome');
   });
+
+  it('should create a monster', () => {
+    this.scope.gameCtl.createMonster({
+      name: 'R.O.U.S',
+      hitpoints: 1000,
+    })
+    expect(this.scope.gameCtl.monster.name).toBe('R.O.U.S');
+    expect(this.scope.gameCtl.monster.hitpoints).toBe(1000);
+  });
 });
 
 describe('filters', function() {
