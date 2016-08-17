@@ -60,6 +60,7 @@
             <strong>Race:</strong> {{ gameCtl.player.race | titlecase }}
           </li>
         </ul>
+        <button type="button" ng-click="gameCtl.resetPlayer()">Reset</button>
       </section>
     </section>
 
@@ -95,6 +96,7 @@
             <strong>Hitpoints:</strong> {{ gameCtl.monster.hitpoints }}
           </li>
         </ul>
+        <button type="button" ng-click="gameCtl.resetMonster()">Reset</button>
       </section>
     </section>
   </main>

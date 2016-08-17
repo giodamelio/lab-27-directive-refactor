@@ -25,9 +25,21 @@ app.controller('GameController', ['$scope', function($scope) {
     $scope.gameCtl.player.isCreated = true;
   };
 
+  $scope.gameCtl.resetPlayer = function() {
+    $scope.gameCtl.player = {};
+    $scope.playerForm.player = {};
+    $scope.gameCtl.player.isCreated = false;
+  };
+
   $scope.gameCtl.createMonster = function(monsterInfo) {
     $scope.gameCtl.monster = monsterInfo;
     $scope.gameCtl.monster.isCreated = true;
+  };
+
+  $scope.gameCtl.resetMonster = function() {
+    $scope.gameCtl.monster = {};
+    $scope.monsterForm.monster = {};
+    $scope.gameCtl.monster.isCreated = false;
   };
 }]);
 
