@@ -1,4 +1,5 @@
 const angular = require('angular');
+const titlecase = require('titlecase');
 
 const app = angular.module('game');
 
@@ -24,3 +25,6 @@ app.controller('GameController', ['$scope', function($scope) {
     $scope.gameCtl.player.isCreated = true;
   };
 }]);
+
+// Custom filter to convert strings to titlecase
+app.filter('titlecase', () => (input) => titlecase(input));

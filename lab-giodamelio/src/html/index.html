@@ -49,9 +49,17 @@
       </form>
 
       <section ng-show="gameCtl.player.isCreated">
-        Name: {{ gameCtl.player.name }}
-        Gender: {{ gameCtl.player.gender }}
-        Race: {{ gameCtl.player.race }}
+        <ul>
+          <li>
+            <strong>Name:</strong> {{ gameCtl.player.name | titlecase }}
+          </li>
+          <li>
+            <strong>Gender:</strong> {{ gameCtl.player.gender | titlecase }}
+          </li>
+          <li>
+            <strong>Race:</strong> {{ gameCtl.player.race | titlecase }}
+          </li>
+        </ul>
       </section>
     </section>
     <section class="col col2">2nd Column</section>
