@@ -3,6 +3,7 @@ const path = require('path');
 const ExtractText = require('extract-text-webpack-plugin');
 const Dashboard = require('webpack-dashboard');
 const DashboardPlugin = require('webpack-dashboard/plugin');
+const autoprefixer = require('autoprefixer');
 
 const dashboard = new Dashboard();
 
@@ -17,9 +18,12 @@ module.exports = {
     loaders: [
       {
         test: /\.scss$/,
-        loader: ExtractText.extract('style', ['css', 'sass']),
+        loader: ExtractText.extract('style', ['css', 'postcss', 'sass']),
       },
     ],
+  },
+  postcss() {
+    return [autoprefixer];
   },
   plugins: [
     new ExtractText('bundle.css'),
