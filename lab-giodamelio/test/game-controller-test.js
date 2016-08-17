@@ -18,6 +18,23 @@ describe('testing game-controller', function() {
     expect(this.scope.gameCtl.player.race).toBe('gnome');
   });
 
+  xit('should reset a player', () => {
+    this.scope.gameCtl.createPlayer({
+      name: 'Gio',
+      gender: 'male',
+      race: 'gnome',
+    })
+    expect(this.scope.gameCtl.player.name).toBe('Gio');
+    expect(this.scope.gameCtl.player.gender).toBe('male');
+    expect(this.scope.gameCtl.player.race).toBe('gnome');
+
+    this.scope.gameCtl.resetPlayer();
+
+    expect(this.scope.gameCtl.player.name).toBe(undefined);
+    expect(this.scope.gameCtl.player.gender).toBe(undefined);
+    expect(this.scope.gameCtl.player.race).toBe(undefined);
+  });
+
   it('should create a monster', () => {
     this.scope.gameCtl.createMonster({
       name: 'R.O.U.S',
