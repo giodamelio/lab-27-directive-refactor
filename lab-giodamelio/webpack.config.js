@@ -20,6 +20,11 @@ module.exports = {
         test: /\.scss$/,
         loader: ExtractText.extract('style', ['css', 'postcss', 'sass']),
       },
+      {
+        test: /\.js$/,
+        loaders: ['babel'],
+        exclude: /node_modules/,
+      },
     ],
   },
   postcss() {
