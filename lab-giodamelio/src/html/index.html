@@ -14,6 +14,8 @@
     <section class="col col1">
       <form
         name="playerForm"
+        ng-submit="gameCtl.createPlayer(playerForm.player)"
+        ng-hide="gameCtl.player.isCreated"
         novalidate>
 
         <label>
@@ -42,7 +44,15 @@
             </option>
           </select>
         </label>
+
+        <button type="submit">Submit</button>
       </form>
+
+      <section ng-show="gameCtl.player.isCreated">
+        Name: {{ gameCtl.player.name }}
+        Gender: {{ gameCtl.player.gender }}
+        Race: {{ gameCtl.player.race }}
+      </section>
     </section>
     <section class="col col2">2nd Column</section>
   </main>

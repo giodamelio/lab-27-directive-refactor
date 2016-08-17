@@ -18,4 +18,9 @@ app.controller('GameController', ['$scope', function($scope) {
       'Tiefling',
     ],
   };
+
+  $scope.gameCtl.createPlayer = function(playerInfo) {
+    $scope.gameCtl.player = playerInfo;
+    $scope.gameCtl.player.isCreated = true;
+  };
 }]);
