@@ -1,11 +1,7 @@
 const path = require('path');
 
 const ExtractText = require('extract-text-webpack-plugin');
-const Dashboard = require('webpack-dashboard');
-const DashboardPlugin = require('webpack-dashboard/plugin');
 const autoprefixer = require('autoprefixer');
-
-const dashboard = new Dashboard();
 
 module.exports = {
   entry: path.join(__dirname, 'src/index.js'),
@@ -32,6 +28,5 @@ module.exports = {
   },
   plugins: [
     new ExtractText('bundle.css'),
-    new DashboardPlugin(dashboard.setData),
   ],
 };
