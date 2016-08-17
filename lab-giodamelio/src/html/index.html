@@ -1,21 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="cowsay">
+<html lang="en" ng-app="game">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World!</title>
+  <title>Game</title>
 
   <script src="bundle.js"></script>
   <link rel="stylesheet" href="bundle.css">
 </head>
 <body>
-  <main ng-controller="CowsayController" >
-    <form novalidate ng-submit="save()">
-      <input type="text" ng-model="text">
-      <input type="submit" value="Save">
-      <button type="button" ng-click="undo()">Undo</button>
-    </form>
-    <pre>{{ say(text) }}</pre>
-    <pre>{{ result }}</pre>
+  <main ng-controller="GameController">
   </main>
 </body>
 </html>
