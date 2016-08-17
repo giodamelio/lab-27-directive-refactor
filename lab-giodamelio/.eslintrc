@@ -1,9 +1,6 @@
 {
   "extends": "@giodamelio/eslint-config",
-  "settings": {
-    "import/resolver": "webpack"
-  },
-  "rules": [
+  "rules": {
     "no-param-reassign": "off"
-  ]
+  }
 }

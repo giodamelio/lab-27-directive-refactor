@@ -1,7 +1,7 @@
 const angular = require('angular');
 const cowsay = require('cowsay-browser');
 
-require('!!file?name=[name].[ext]!./html/index.html');
+require('!!file?name=[name].[ext]!./html/index.html'); // eslint-disable-line
 require('./scss/index.scss');
 
 const app = angular.module('cowsay', []);
