@@ -11,8 +11,40 @@
   <main
     class="flex-container"
     ng-controller="GameController">
-    <section class="column1">1st Column</section>
-    <section class="column2">2nd Column</section>
+    <section class="col col1">
+      <form
+        name="playerForm"
+        novalidate>
+
+        <label>
+          Name:
+          <input type="text" name="name" ng-model="playerForm.player.name">
+        </label>
+
+        <label>
+          Gender:
+          <select name="gender" ng-model="playerForm.player.gender">
+            <option
+              ng-repeat="gender in gameCtl.genders"
+              value="{{ gender | lowercase }}">
+              {{ gender }}
+            </option>
+          </select>
+        </label>
+
+        <label>
+          Race:
+          <select name="race" ng-model="playerForm.player.race">
+            <option
+              ng-repeat="race in gameCtl.races"
+              value="{{ race | lowercase }}">
+              {{ race }}
+            </option>
+          </select>
+        </label>
+      </form>
+    </section>
+    <section class="col col2">2nd Column</section>
   </main>
 </body>
 </html>
