@@ -46,7 +46,6 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
-    "normalize.css": "^4.2.0",
-    "titlecase": "^1.1.2"
+    "normalize.css": "^4.2.0"
   }
 }

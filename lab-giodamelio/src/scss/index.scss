@@ -1,45 +1,6 @@
 @import "~normalize.css/normalize.css";
-@import "./_theme.scss";
 
 html, body, main {
   height: 100%;
   width: 100%;
-}
-
-// Columns layout
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-content: stretch;
-  align-items: flex-start;
-}
-
-.col {
-  flex: 1;
-  order: 0;
-  align-self: stretch;
-
-  padding: 1em;
-}
-
-.col1 {
-  background: $col1background;
-}
-
-.col2 {
-  background: $col2background;
-}
-
-// Make the form pretty
-form {
-  label {
-    display: block;
-    padding-bottom: 0.5em;
-  }
-}
-
-ul li {
-  list-style: none;
 }
