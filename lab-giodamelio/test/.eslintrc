@@ -1,6 +1,9 @@
 {
   "env": {
     "mocha": true,
+    "jasmine": true
+  },
+  "globals": {
     "angular": true,
   }
 }

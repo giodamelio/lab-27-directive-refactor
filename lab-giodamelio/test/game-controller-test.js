@@ -3,7 +3,7 @@ describe('testing game-controller', function() {
     angular.mock.module('game');
     angular.mock.inject(($controller, $rootScope) => {
       this.scope = $rootScope.$new();
-      new $controller('GameController', {$scope: this.scope});
+      $controller('GameController', { $scope: this.scope });
     });
   });
 
@@ -12,7 +12,7 @@ describe('testing game-controller', function() {
       name: 'Gio',
       gender: 'male',
       race: 'gnome',
-    })
+    });
     expect(this.scope.gameCtl.player.name).toBe('Gio');
     expect(this.scope.gameCtl.player.gender).toBe('male');
     expect(this.scope.gameCtl.player.race).toBe('gnome');
@@ -23,7 +23,7 @@ describe('testing game-controller', function() {
       name: 'Gio',
       gender: 'male',
       race: 'gnome',
-    })
+    });
     expect(this.scope.gameCtl.player.name).toBe('Gio');
     expect(this.scope.gameCtl.player.gender).toBe('male');
     expect(this.scope.gameCtl.player.race).toBe('gnome');
@@ -39,7 +39,7 @@ describe('testing game-controller', function() {
     this.scope.gameCtl.createMonster({
       name: 'R.O.U.S',
       hitpoints: 1000,
-    })
+    });
     expect(this.scope.gameCtl.monster.name).toBe('R.O.U.S');
     expect(this.scope.gameCtl.monster.hitpoints).toBe(1000);
   });
