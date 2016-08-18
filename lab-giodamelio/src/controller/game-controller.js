@@ -12,6 +12,7 @@ app.controller('GameController', ['$log', function($log) {
   this.player = {
     location: 'roomA',
     hitpoints: 100,
+    alive: true,
   };
 
   this.direction = 'north';
@@ -29,14 +30,28 @@ app.controller('GameController', ['$log', function($log) {
       const nextRoom = currentRoom[this.direction];
 
       if (nextRoom === 'wall') {
-        return $log.log('You ran into a wall');
+        this.addLogItem('You run into a wall');
+        $log.log(`Cannot enter ${nextRoom} from ${this.player.location}`);
+        return;
       }
 
       this.player.location = nextRoom;
-      return $log.log(`You enter ${nextRoom}`);
+      this.addLogItem(`You enter ${nextRoom}`);
+      $log.log(`Player entered ${nextRoom} from ${this.player.location}`);
+      return;
     }
 
-    return $log.log(`Player location(${this.player.location}) is invalid`);
+    this.player.alive = false;
+    this.addLogItem('You die');
+    $log.log(`Player location(${this.player.location}) is invalid`);
+    return;
+  };
+
+  this.addLogItem = function(message) {
+    this.actions.unshift({
+      type: 'message',
+      text: message,
+    });
   };
 }]);
 

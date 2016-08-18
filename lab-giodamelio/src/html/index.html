@@ -20,10 +20,14 @@
           <select
             name="direction"
             ng-model="gameCtrl.direction"
+            ng-disabled="!gameCtrl.player.alive"
             ng-options="direction as (direction | capitalize) for direction in gameCtrl.directions">
           </select>
 
-          <button type="button" ng-click="gameCtrl.move()">Go</button>
+          <button
+            type="button"
+            ng-disabled="!gameCtrl.player.alive"
+            ng-click="gameCtrl.move()">Go</button>
         </form>
       </section>
 
