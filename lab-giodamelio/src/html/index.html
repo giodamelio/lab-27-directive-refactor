@@ -2,11 +2,44 @@
 <html lang="en" ng-app="game">
 <head>
   <meta charset="UTF-8">
-  <title>Game</title>
+  <title>Dungeon Crawler</title>
 
   <script src="bundle.js"></script>
   <link rel="stylesheet" href="bundle.css">
 </head>
 <body>
+  <header>
+    <h1>Dungeon Crawler</h1>
+  </header>
+
+  <main>
+    <section class="container">
+      <section class="controls">
+        <form
+          name="controlsForm">
+          <select name="direction">
+            <option value="north">North</option>
+            <option value="east">East</option>
+            <option value="south">South</option>
+            <option value="west">West</option>
+          </select>
+
+          <button type="button">Go</button>
+        </form>
+      </section>
+
+      <section class="stats">
+        <ol>
+          <li>HP: 100</li>
+        </ol>
+      </section>
+    </section>
+
+    <section class="log">
+      <ol>
+        <li>As you enter the Dungeon, you hear the entry way collapse behind you.</li>
+      </ol>
+    </section>
+  </main>
 </body>
 </html>
