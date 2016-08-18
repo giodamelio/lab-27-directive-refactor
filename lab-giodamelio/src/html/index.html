@@ -12,16 +12,15 @@
     <h1>Dungeon Crawler</h1>
   </header>
 
-  <main>
+  <main ng-controller="GameController as gameCtrl">
     <section class="container">
       <section class="controls">
         <form
           name="controlsForm">
-          <select name="direction">
-            <option value="north">North</option>
-            <option value="east">East</option>
-            <option value="south">South</option>
-            <option value="west">West</option>
+          <select
+            name="direction"
+            ng-model="gameCtrl.direction"
+            ng-options="direction for direction in gameCtrl.directions">
           </select>
 
           <button type="button">Go</button>
