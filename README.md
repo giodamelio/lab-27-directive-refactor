@@ -42,11 +42,11 @@
 
 # Client Functionality
 For this assignment you will be makeing AJAX request to an API to do CRUD opperations on a single resource
-* Make a resource controller with methods to create, read, and destroy a resouce using AJAX requests
-* Make a form to invoke the createResouse method on your controller
-* Your resouces should be stored in an array on the controller
-* Use ng-repeat to display information from your resouces on the page
-* You may use your own server however you can use the *noteapp-backend* repo that is included in the class lab repository organization
+* Make a resource controller with methods to create, read, and destroy a resource using AJAX requests
+* Make a form to invoke the createResource method on your controller
+* Your resource should be stored in an array on the controller
+* Use ng-repeat to display information from your resources on the page
+* You may use your own server however you can use the **noteapp-backend** repo that is included in the class lab repository organization
 
 # Test
 * Test three CRUD methods on your resource controller
