@@ -23,11 +23,11 @@ app.controller('GameController', ['$log', function($log) {
     },
   ];
 
-  this.move = function() {
-    $log.log(`Attempting to move ${this.direction}`);
+  this.move = function(direction) {
+    $log.log(`Attempting to move ${direction}`);
     if (this.map[this.player.location]) {
       const currentRoom = this.map[this.player.location];
-      const nextRoom = currentRoom[this.direction];
+      const nextRoom = currentRoom[direction];
 
       if (nextRoom === 'wall') {
         this.addLogItem('You run into a wall');
