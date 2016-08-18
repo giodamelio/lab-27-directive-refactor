@@ -41,6 +41,7 @@
  * require your **base.scss**
 
 # Client Functionality
+
 For this assignment you'll be creating a text based adventure game.
 * This game should have at least two rooms that the player can move between. 
 * When entering one of the rooms the player should encounter an object they can interact with
@@ -59,3 +60,4 @@ For this assignment you'll be creating a text based adventure game.
 
 # Bonus
 * **1pt** use random numbers to create a chance for your interactions to happen in every room.
+

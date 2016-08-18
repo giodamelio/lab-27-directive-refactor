@@ -1,0 +1,6 @@
+{
+  "extends": "@giodamelio/eslint-config",
+  "rules": {
+    "no-param-reassign": "off"
+  }
+}
