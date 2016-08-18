@@ -20,7 +20,7 @@
           <select
             name="direction"
             ng-model="gameCtrl.direction"
-            ng-options="direction for direction in gameCtrl.directions">
+            ng-options="direction as (direction | capitalize) for direction in gameCtrl.directions">
           </select>
 
           <button type="button">Go</button>

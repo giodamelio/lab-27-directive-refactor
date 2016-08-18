@@ -9,3 +9,10 @@ app.controller('GameController', ['$log', function($log) {
 
   this.direction = 'North';
 }]);
+
+app.filter('capitalize', () => (input) => {
+  if (!input) {
+    return '';
+  }
+  return input.charAt(0).toUpperCase() + input.substr(1).toLowerCase();
+});
