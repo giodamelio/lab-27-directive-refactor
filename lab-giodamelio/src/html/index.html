@@ -23,7 +23,7 @@
             ng-options="direction as (direction | capitalize) for direction in gameCtrl.directions">
           </select>
 
-          <button type="button">Go</button>
+          <button type="button" ng-click="gameCtrl.move()">Go</button>
         </form>
       </section>
 
@@ -36,7 +36,9 @@
 
     <section class="log">
       <ol>
-        <li>As you enter the Dungeon, you hear the entry way collapse behind you.</li>
+        <li ng-repeat="action in gameCtrl.actions track by $index">
+          {{action.text}}
+        </li>
       </ol>
     </section>
   </main>
