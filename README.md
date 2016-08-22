@@ -1,5 +1,5 @@
 ![cf](https://i.imgur.com/7v5ASc8.png) lab 22 controller crud
-======
+=======
 
 # To Submit this Assignment
   * fork this repository
@@ -41,6 +41,7 @@
  * require your **base.scss**
 
 # Client Functionality
+<<<<<<< HEAD
 For this assignment you will be makeing AJAX request to an API to do CRUD opperations on a single resource
 * Make a resource controller with methods to create, read, and destroy a resource using AJAX requests
 * Make a form to invoke the createResource method on your controller

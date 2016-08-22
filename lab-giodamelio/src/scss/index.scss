@@ -1,0 +1,47 @@
+@import "~normalize.css/normalize.css";
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+html, body, main {
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+}
+
+header {
+  text-align: center;
+
+  h1 {
+    font-weight: normal;
+    font-size: 3em;
+  }
+}
+
+main {
+  text-align: center;
+}
+
+section.container {
+  display: flex;
+  flex-direction: row;
+}
+
+section {
+  padding: 1em;
+}
+
+section.controls {
+  flex: 1;
+}
+
+section.stats {
+  flex: 1;
+
+  ol {
+    list-style: none;
+  }
+}
+
+section.log {
+  ol {
+    list-style: none;
+  }
+}

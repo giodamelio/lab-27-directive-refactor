@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="game">
+<head>
+  <meta charset="UTF-8">
+  <title>Dungeon Crawler</title>
+
+  <script src="bundle.js"></script>
+  <link rel="stylesheet" href="bundle.css">
+</head>
+<body>
+  <header>
+    <h1>Dungeon Crawler</h1>
+  </header>
+
+  <main ng-controller="GameController as gameCtrl">
+    <section class="container">
+      <section class="controls">
+        <form
+          name="controlsForm">
+          <select
+            name="direction"
+            ng-model="gameCtrl.direction"
+            ng-disabled="!gameCtrl.player.alive"
+            ng-options="direction as (direction | capitalize) for direction in gameCtrl.directions">
+          </select>
+
+          <button
+            type="button"
+            ng-disabled="!gameCtrl.player.alive"
+            ng-click="gameCtrl.move(gameCtrl.direction)">Go</button>
+        </form>
+      </section>
+
+      <section class="stats">
+        <ol>
+          <li>HP: 100</li>
+        </ol>
+      </section>
+    </section>
+
+    <section class="log">
+      <ol>
+        <li ng-repeat="action in gameCtrl.actions track by $index">
+          {{action.text}}
+        </li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
