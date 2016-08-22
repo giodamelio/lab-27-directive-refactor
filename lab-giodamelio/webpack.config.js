@@ -21,6 +21,10 @@ module.exports = {
         loaders: ['babel'],
         exclude: /node_modules/,
       },
+      {
+        test: /\.(woff|svg|eot|ttf).*/,
+        loader: 'url?limit=10000&name=font/[name].[ext]',
+      },
     ],
   },
   postcss() {
