@@ -8,7 +8,8 @@
     "test-all": "NODE_ENV=test karma start --browsers Chrome,PhantomJS,Firefox",
     "watch": "webpack-dev-server --inline --hot --port 3141",
     "build": "webpack",
-    "lint": "eslint src/ test/ webpack.config.js"
+    "lint": "eslint src/ test/ webpack.config.js",
+    "api-server": "json-server test/db.json"
   },
   "author": "Gio d'Amelio",
   "license": "MIT",
@@ -26,6 +27,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "jasmine-core": "^2.4.1",
+    "json-server": "^0.8.18",
     "karma": "^1.2.0",
     "karma-babel-preprocessor": "^6.0.1",
     "karma-chrome-launcher": "^1.0.1",
