@@ -53,6 +53,12 @@
               class="fa fa-lg fa-{{ person.gender | lowercase }}"
               aria-hidden="true"></i>
             <strong>{{ person.name }}</strong>
+            <button
+              type="button"
+              class="btn btn-link"
+              ng-click="pc.destroyPerson(person.id)">
+              <i class="fa fa-times black" aria-hidden="true"></i>
+            </button>
           </li>
         </ol>
       </div>

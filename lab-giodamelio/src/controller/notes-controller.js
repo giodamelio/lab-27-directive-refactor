@@ -8,7 +8,7 @@ app.controller('PeopleController', ['$http', '$log', function($http, $log) {
 
   // Create a new person and save it to the server
   this.createPerson = function(name, gender) {
-    $log.log(`Creating persion ${name}`);
+    $log.log(`Creating persion "${name}"`);
     const newPerson = {
       id: this.people.length + 1,
       name,
@@ -16,7 +16,7 @@ app.controller('PeopleController', ['$http', '$log', function($http, $log) {
     };
     $http.post(peopleUrl, newPerson)
       .then((person) => {
-        $log.log(`Created new person ${person.data.name}`);
+        $log.log(`Created new person "${person.data.name}"`);
         this.people.push(newPerson);
       });
   };
@@ -28,6 +28,18 @@ app.controller('PeopleController', ['$http', '$log', function($http, $log) {
       .then((people) => {
         $log.log(`Read ${people.data.length} people from the server`);
         this.people = people.data;
+      });
+  };
+
+  // Delete a person from the server
+  this.destroyPerson = function(id) {
+    const person = this.people.find((p) => p.id === id);
+    $log.log(`Destroying person "${person.name}" (id: ${id})`);
+    return $http.delete(`${peopleUrl}/${id}`)
+      .then(() => {
+        $log.log(`Destroyed person "${person.name}" (id: ${id})`);
+        const personIndex = this.people.findIndex((p) => p.id === id);
+        this.people.splice(personIndex, 1);
       });
   };
 
