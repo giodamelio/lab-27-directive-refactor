@@ -67,26 +67,68 @@
           <tbody>
             <tr ng-repeat="person in pc.people track by person.id">
               <td>{{ person.id }}</td>
-              <td>{{ person.name }}</td>
               <td>
-                <i
-                  class="fa fa-lg fa-{{ person.gender | lowercase }}"
-                  aria-hidden="true"></i> {{ person.gender }}
+                <div ng-hide="person.editing">
+                  {{ person.name }}
+                </div>
+                <div ng-show="person.editing">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Name"
+                    ng-model="person.name">
+                </div>
               </td>
               <td>
-                <button
-                  class="btn btn-xs btn-default"
-                  type="button">
-                  <i class="fa fa-pencil" aria-hidden="true"></i> Edit
-                </button>
+                <div ng-hide="person.editing">
+                  <i
+                    class="fa fa-lg fa-{{ person.gender | lowercase }}"
+                    aria-hidden="true"></i> {{ person.gender }}
+                </div>
+                <div ng-show="person.editing">
+                  <select
+                    class="form-control"
+                    ng-model="person.gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
               </td>
               <td>
-                <button
-                  type="button"
-                  class="btn btn-xs btn-danger"
-                  ng-click="pc.destroyPerson(person.id)">
-                  <i class="fa fa-times" aria-hidden="true"></i> Delete
-                </button>
+                <div ng-hide="person.editing">
+                  <button
+                    class="btn btn-xs btn-default"
+                    type="button"
+                    ng-click="person.editing=true">
+                    <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                  </button>
+                </div>
+                <div ng-show="person.editing">
+                  <button
+                    class="btn btn-xs btn-default"
+                    type="button"
+                    ng-click="person.editing=false;pc.updatePerson(person.id, person.name, person.gender)">
+                    <i class="fa fa-save" aria-hidden="true"></i> Save
+                  </button>
+                </div>
+              </td>
+              <td>
+                <div ng-hide="person.editing">
+                  <button
+                    type="button"
+                    class="btn btn-xs btn-danger"
+                    ng-click="pc.destroyPerson(person.id)">
+                    <i class="fa fa-times" aria-hidden="true"></i> Delete
+                  </button>
+                </div>
+                <div ng-show="person.editing">
+                  <button
+                    type="button"
+                    class="btn btn-xs btn-danger"
+                    ng-click="person.editing=false">
+                    <i class="fa fa-undo" aria-hidden="true"></i> Cancel
+                  </button>
+                </div>
               </td>
             </tr>
           </tbody>
