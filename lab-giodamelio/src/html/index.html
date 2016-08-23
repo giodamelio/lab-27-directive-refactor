@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="notes">
 <head>
   <meta charset="UTF-8">
   <title></title>
@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="bundle.css">
 </head>
 <body>
-  <h1>Hello World!</h1>
-  <i class="fa fa-camera-retro"></i>
+  <main ng-controller="NotesController as nc">
+    <p>{{ nc.test }}</p>
+  </main>
 </body>
 </html>
