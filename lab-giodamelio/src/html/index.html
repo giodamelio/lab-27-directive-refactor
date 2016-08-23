@@ -18,7 +18,11 @@
       </div>
 
       <div class="collapse navbar-collapse" id="navbar-collapse">
-        <form novalidate class="navbar-form navbar-right">
+        <form
+          novalidate
+          name="createForm"
+          ng-submit="pc.createPerson(pc.newPerson.name, pc.newPerson.gender)"
+          class="navbar-form navbar-right">
           <input
             type="text"
             class="form-control"
@@ -31,9 +35,8 @@
             <option value="Female">Female</option>
           </select>
           <button
-            type="button"
-            class="btn btn-default"
-            ng-click="pc.createPerson(pc.newPerson.name, pc.newPerson.gender)">
+            type="submit"
+            class="btn btn-default">
             <i class="fa fa-plus" aria-hidden="true"></i> Add
           </button>
           <button

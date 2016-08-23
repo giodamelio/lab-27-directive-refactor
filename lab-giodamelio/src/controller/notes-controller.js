@@ -18,6 +18,7 @@ app.controller('PeopleController', ['$http', '$log', function($http, $log) {
       .then((person) => {
         $log.log(`Created new person "${person.data.name}"`);
         this.people.push(newPerson);
+        this.newPerson = {};
       });
   };
 
