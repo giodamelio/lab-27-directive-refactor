@@ -31,5 +31,17 @@ describe('test PeopleController', function() {
 
     this.peopleController.createPerson('Gio', 'Male');
     this.$httpBackend.flush();
+
+    expect(this.peopleController.people.length).toBe(1);
+  });
+
+  it('should read people', () => {
+    this.$httpBackend.expectGET(PEOPLE_URL)
+      .respond(EXAMPLE_DATA);
+
+    this.peopleController.readPeople();
+    this.$httpBackend.flush();
+
+    expect(this.peopleController.people.length).toBe(2);
   });
 });
