@@ -19,24 +19,28 @@
 
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <form novalidate class="navbar-form navbar-right">
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Name"
-              ng-model="pc.newPerson.name">
-            <select
-              class="form-control"
-              ng-model="pc.newPerson.gender">
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
-          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Name"
+            ng-model="pc.newPerson.name">
+          <select
+            class="form-control"
+            ng-model="pc.newPerson.gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
           <button
             type="button"
             class="btn btn-default"
             ng-click="pc.createPerson(pc.newPerson.name, pc.newPerson.gender)">
             <i class="fa fa-plus" aria-hidden="true"></i> Add
+          </button>
+          <button
+            type="button"
+            class="btn btn-default"
+            ng-click="pc.readPeople()">
+            <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
           </button>
         </form>
       </div>
