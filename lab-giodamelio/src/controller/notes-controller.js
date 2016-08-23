@@ -1,4 +1,5 @@
 const angular = require('angular');
+const shortid = require('shortid');
 
 const app = angular.module('notes');
 
@@ -10,7 +11,7 @@ app.controller('PeopleController', ['$http', '$log', function($http, $log) {
   this.createPerson = function(name, gender) {
     $log.log(`Creating persion "${name}"`);
     const newPerson = {
-      id: this.people.length + 1,
+      id: shortid.generate(),
       name,
       gender,
     };
