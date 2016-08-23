@@ -32,6 +32,17 @@ app.controller('PeopleController', ['$http', '$log', function($http, $log) {
       });
   };
 
+  // Update a person
+  this.updatePerson = function(id, name, gender) {
+    const oldPerson = this.people.find((p) => p.id === id);
+    $log.log(`Updating "${oldPerson.name}" (id: ${id})`);
+    return $http.put(`${peopleUrl}/${id}`, {
+      name, gender,
+    }).then((newPerson) => {
+      $log.log(`Updated person "${newPerson.data.name}" (id: ${id})`);
+    });
+  };
+
   // Delete a person from the server
   this.destroyPerson = function(id) {
     const person = this.people.find((p) => p.id === id);
