@@ -8,8 +8,15 @@
   <link rel="stylesheet" href="bundle.css">
 </head>
 <body>
-  <main ng-controller="NotesController as nc">
-    <p>{{ nc.test }}</p>
+  <main ng-controller="PeopleController as pc">
+    <ol class="list-unstyled">
+      <li ng-repeat="person in pc.people track by person.id">
+        <i
+          class="fa fa-lg fa-{{ person.gender | lowercase }}"
+          aria-hidden="true"></i>
+        <strong>{{ person.name }}</strong>
+      </li>
+    </ol>
   </main>
 </body>
 </html>
