@@ -59,4 +59,14 @@ describe('test PeopleController', function() {
 
     expect(this.peopleController.people.length).toBe(3);
   });
+
+  it('should destroy a person', () => {
+    this.$httpBackend.expectDELETE(`${PEOPLE_URL}/ryNH8_Kc`)
+      .respond();
+
+    this.peopleController.destroyPerson('ryNH8_Kc');
+    this.$httpBackend.flush();
+
+    expect(this.peopleController.people.length).toBe(2);
+  });
 });
