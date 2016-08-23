@@ -1,7 +1,7 @@
 const angular = require('angular');
 const shortid = require('shortid');
 
-const app = angular.module('notes');
+const app = angular.module('peopleApp');
 
 app.controller('PeopleController', ['$http', '$log', function($http, $log) {
   const peopleUrl = `${__API_URL__}/people`; // eslint-disable-line no-undef
