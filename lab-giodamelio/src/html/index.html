@@ -7,16 +7,50 @@
   <script src="bundle.js"></script>
   <link rel="stylesheet" href="bundle.css">
 </head>
-<body>
-  <main ng-controller="PeopleController as pc">
-    <ol class="list-unstyled">
-      <li ng-repeat="person in pc.people track by person.id">
-        <i
-          class="fa fa-lg fa-{{ person.gender | lowercase }}"
-          aria-hidden="true"></i>
-        <strong>{{ person.name }}</strong>
-      </li>
-    </ol>
+<body ng-controller="PeopleController as pc">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a class="navbar-brand" href="#">People List</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Name">
+            <select class="form-control">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-default">
+            <i class="fa fa-plus" aria-hidden="true"></i> Add
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <main
+    class="container">
+    <div class="row">
+      <div class="col-10-xs">
+        <ol class="list-unstyled">
+          <li ng-repeat="person in pc.people track by person.id">
+            <i
+              class="fa fa-lg fa-{{ person.gender | lowercase }}"
+              aria-hidden="true"></i>
+            <strong>{{ person.name }}</strong>
+          </li>
+        </ol>
+      </div>
+    </div>
   </main>
 </body>
 </html>
