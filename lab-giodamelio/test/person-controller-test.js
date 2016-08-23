@@ -17,6 +17,7 @@ describe('test PeopleController', function() {
     angular.mock.module('peopleApp');
     angular.mock.inject(($controller, $httpBackend) => {
       this.peopleController = new $controller('PeopleController');
+      this.peopleController.people = EXAMPLE_DATA;
       this.$httpBackend = $httpBackend;
     });
   });
@@ -32,16 +33,30 @@ describe('test PeopleController', function() {
     this.peopleController.createPerson('Gio', 'Male');
     this.$httpBackend.flush();
 
-    expect(this.peopleController.people.length).toBe(1);
+    expect(this.peopleController.people.length).toBe(3);
   });
 
   it('should read people', () => {
     this.$httpBackend.expectGET(PEOPLE_URL)
-      .respond(EXAMPLE_DATA);
+      .respond(this.peopleController.people);
 
     this.peopleController.readPeople();
     this.$httpBackend.flush();
 
-    expect(this.peopleController.people.length).toBe(2);
+    expect(this.peopleController.people.length).toBe(3);
+  });
+
+  it('should update a person', () => {
+    this.$httpBackend.expectPUT(`${PEOPLE_URL}/ryNH8_Kc`, (rawData) => {
+      const data = JSON.parse(rawData);
+      expect(data.name).toBe('Sophia');
+      expect(data.gender).toBe('Female');
+      return true;
+    }).respond((method, url, data) => [201, data]);
+
+    this.peopleController.updatePerson('ryNH8_Kc', 'Sophia', 'Female');
+    this.$httpBackend.flush();
+
+    expect(this.peopleController.people.length).toBe(3);
   });
 });
