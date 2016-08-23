@@ -6,7 +6,7 @@
   "scripts": {
     "test": "NODE_ENV=test karma start --browsers PhantomJS",
     "test-all": "NODE_ENV=test karma start --browsers Chrome,PhantomJS,Firefox",
-    "watch": "webpack-dev-server --inline --hot --port 3141",
+    "watch": "npm run api-server & webpack-dev-server --hot",
     "build": "webpack",
     "lint": "eslint src/ test/ webpack.config.js",
     "api-server": "json-server test/db.json"

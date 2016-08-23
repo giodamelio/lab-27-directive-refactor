@@ -10,7 +10,7 @@ module.exports = {
     path: 'build/',
     filename: 'bundle.js',
   },
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -35,4 +35,8 @@ module.exports = {
     new ExtractText('bundle.css'),
     new webpack.DefinePlugin({ __API_URL__: JSON.stringify('http://localhost:3000') }),
   ],
+  devServer: {
+    inline: true,
+    port: 3141,
+  },
 };
