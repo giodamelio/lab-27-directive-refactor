@@ -54,20 +54,43 @@
     class="container">
     <div class="row">
       <div class="col-10-xs">
-        <ol class="list-unstyled">
-          <li ng-repeat="person in pc.people track by person.id">
-            <i
-              class="fa fa-lg fa-{{ person.gender | lowercase }}"
-              aria-hidden="true"></i>
-            <strong>{{ person.name }}</strong>
-            <button
-              type="button"
-              class="btn btn-link"
-              ng-click="pc.destroyPerson(person.id)">
-              <i class="fa fa-times black" aria-hidden="true"></i>
-            </button>
-          </li>
-        </ol>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="person in pc.people track by person.id">
+              <td>{{ person.id }}</td>
+              <td>{{ person.name }}</td>
+              <td>
+                <i
+                  class="fa fa-lg fa-{{ person.gender | lowercase }}"
+                  aria-hidden="true"></i> {{ person.gender }}
+              </td>
+              <td>
+                <button
+                  class="btn btn-xs btn-default"
+                  type="button">
+                  <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                </button>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-xs btn-danger"
+                  ng-click="pc.destroyPerson(person.id)">
+                  <i class="fa fa-times" aria-hidden="true"></i> Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </main>
