@@ -55,7 +55,4 @@ app.controller('PeopleController', ['$http', '$log', function($http, $log) {
         this.people.splice(personIndex, 1);
       });
   };
-
-  // Get the people once when the controller loads
-  this.readPeople();
 }]);
