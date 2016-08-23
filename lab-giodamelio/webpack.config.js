@@ -1,5 +1,6 @@
 const path = require('path');
 
+const webpack = require('webpack');
 const ExtractText = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
@@ -32,5 +33,6 @@ module.exports = {
   },
   plugins: [
     new ExtractText('bundle.css'),
+    new webpack.DefinePlugin({ __API_URL__: JSON.stringify('http://localhost:3000') }),
   ],
 };
