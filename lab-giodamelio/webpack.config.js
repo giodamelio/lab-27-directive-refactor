@@ -23,6 +23,10 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.html$/,
+        loader: 'html',
+      },
+      {
         test: /\.(woff|svg|eot|ttf).*/,
         loader: 'url?limit=10000',
       },
