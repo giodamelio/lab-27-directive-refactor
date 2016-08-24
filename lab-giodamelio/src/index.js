@@ -7,6 +7,7 @@ require('./scss/index.scss');
 
 const app = angular.module('gallery', [angularRoute]);
 
+require('./controller')(app);
 require('./view')(app);
 
 app.config(['$routeProvider', function($route) {
