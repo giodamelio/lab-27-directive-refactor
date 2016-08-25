@@ -1,13 +1,13 @@
 /* eslint global-require: "off" */
 module.exports = function(app) {
-  app.directive('animalImageLink', () => ({
-    template: require('./animal-image-link.html'),
+  app.directive('animalImageThumbnail', () => ({
+    template: require('./animal-image-thumbnail.html'),
     controller() {},
-    controllerAs: 'ac',
+    controllerAs: 'tc',
     bindToController: true,
     scope: {
       title: '@',
-      contents: '@',
+      url: '@',
     },
   }));
 };
