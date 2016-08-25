@@ -2,6 +2,9 @@
 const angular = require('angular');
 const angularRoute = require('angular-route');
 
+require('core-js/fn/array/find');
+require('core-js/fn/array/find-index');
+
 require('!!file?name=[name].[ext]!./html/index.html'); // eslint-disable-line
 require('./scss/index.scss');
 

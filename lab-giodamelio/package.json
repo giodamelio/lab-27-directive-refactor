@@ -51,6 +51,7 @@
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
     "bootstrap-sass": "^3.3.7",
+    "core-js": "^2.4.1",
     "font-awesome": "^4.6.3"
   }
 }
