@@ -1,4 +1,5 @@
 <div>
-  <h2>{{ hc.name }}</h2>
-  <input type="text" ng-model="hc.name">
+  <ul>
+    <li ng-repeat="image in hc.images">{{ image.title }}</li>
+  </ul>
 </div>

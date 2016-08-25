@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.controller('HomeController', [function() {
-    this.name = 'Gio d\'Amelio';
+  app.controller('HomeController', ['$rootScope', function($rootScope) {
+    this.images = $rootScope.images;
   }]);
 };
