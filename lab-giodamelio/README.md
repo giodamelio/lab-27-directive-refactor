@@ -1,6 +1,4 @@
-# Lab 23
-
-I did ths bounus
+# Lab 24
 
 ## Run devserver
 
