@@ -27,6 +27,10 @@ module.exports = {
         loader: 'html',
       },
       {
+        test: /\.json/,
+        loader: 'json',
+      },
+      {
         test: /\.(woff|svg|eot|ttf).*/,
         loader: 'url?limit=10000',
       },
