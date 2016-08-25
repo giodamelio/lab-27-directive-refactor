@@ -1,28 +1,14 @@
-# Build a cute animal gallery
-For this assignment you will be building on your cute bunny directive assignment. 
+# Test Your Adorable Animal Photo Album
+Add testing for your photo album directives. 
 
-Create three different photo albums of cute animals. These could kittens, puppies, goats, sugar gliders, lemurs, whatever as long as they are ridiculously cute and animals, preferably mammalian and fuzzy. 
+Split your tests so that you have separate test file for each of your directives, and at least one test per directive (although most likely you will need more). 
 
-You will need to create a photo album (think of it as an image collection) directive that contains:
-
- - a title and description of your album
- - an array of pictures to display
- - and a "Display Mode" UI control to toggle whether or not you're currently displaying images in a table view or grid view 
-
-The Display UI control should determine which image display directive is utilized for each photo within the album directive. Table view corresponds to the text-only directive, and the grid view is built with the thumbnail directive.
-
-When a user clicks a table row or a thumbnail image, then replace the list view with your full-size image directive. Be sure to include a way to click back to the previously selected list view. 
-
-## Bonus point
-For a bonus point, add another 'album' directive to power a photo carousel (rotate through full-size display of the photos in the album, on a 3 second timer). 
+For this assignment you only need to worry about unit tests. Pay special attention to how the scope is being manipulated by the directive and what changes to the directive are caused by function calls. 
 
 # Requirements 
 App requirements: 6pts
-  - Album directive
-  - Toggle between text and thumbnail display directives
-  - Simple CSS to layout the table and grid
-  - Click through to see full-size image
-  - Adorable images of cute animals
+ - 3 photo directive tests
+ - Album directive test
 
 Code style: 3pts
   - Passes linter
