@@ -34,5 +34,8 @@ app.config(['$routeProvider', function($route) {
       controller: 'FullsizeController',
       controllerAs: 'fc',
     })
+    .when('/error', {
+      template: require('./view/error/error.html'),
+    })
     .otherwise({ redirectTo: '/error' });
 }]);
