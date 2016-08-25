@@ -21,5 +21,10 @@ app.config(['$routeProvider', function($route) {
       controller: 'HomeController',
       controllerAs: 'hc',
     })
+    .when('/fullsize/:id', {
+      template: require('./view/fullsize/fullsize.html'),
+      controller: 'FullsizeController',
+      controllerAs: 'fc',
+    })
     .otherwise({ redirectTo: '/error' });
 }]);
