@@ -21,6 +21,11 @@ app.config(['$routeProvider', function($route) {
       controller: 'HomeController',
       controllerAs: 'hc',
     })
+    .when('/thumbnail', {
+      template: require('./view/thumbnail/thumbnail.html'),
+      controller: 'ThumbnailController',
+      controllerAs: 'tc',
+    })
     .when('/fullsize/:id', {
       template: require('./view/fullsize/fullsize.html'),
       controller: 'FullsizeController',
