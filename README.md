@@ -3,7 +3,7 @@ Refactor your two resource CRUD app to use Angular directives with testing.
 
 Create a minimum of three distinct directives: a list directive, a list item directive, and a form directive. 
 
-At least one of these directives should call a function on a controller. 
+At least one of these directives should call a function that has been passed with an `'&'`. 
 
 Follow best practices with testing, by writing a separate test file for each of the directives.
 
