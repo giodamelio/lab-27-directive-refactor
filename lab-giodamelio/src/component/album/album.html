@@ -1,7 +1,16 @@
 <div>
-  <h1>{{ ac.title }}</h1>
-  <ul>
-    <li ng-repeat="picture in ac.pictures">
+  <header class="margin-bottom">
+    <h1 class="inline">{{ ac.title }}</h1>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">List</button>
+      <button type="button" class="btn btn-default">Grid</button>
+    </div>
+  </header>
+
+  <ul class="list-unstyled list-group">
+    <li class="list-group-item"
+	ng-repeat="picture in ac.pictures">
       <div data-animal-image-link
 	   data-title="{{picture.title}}"
 	   data-url="{{picture.url}}"
