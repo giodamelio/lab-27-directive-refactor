@@ -1,3 +1,11 @@
 <div>
-  <h1>Hello World!!!</h1>
+  <h1>{{ ac.title }}</h1>
+  <ul>
+    <li ng-repeat="picture in ac.pictures">
+      <div data-animal-image-link
+	   data-title="{{picture.title}}"
+	   data-url="{{picture.url}}"
+      ></div>
+    </li>
+  </ul>
 </div>
