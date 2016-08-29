@@ -3,12 +3,19 @@
     <h1 class="inline">{{ ac.title }}</h1>
 
     <div class="btn-group">
-      <button type="button" class="btn btn-default">List</button>
-      <button type="button" class="btn btn-default">Grid</button>
+      <button type="button"
+	      class="btn btn-default"
+	      ng-click="ac.mode='list'"
+      >List</button>
+      <button type="button"
+	      class="btn btn-default"
+	      ng-click="ac.mode='grid'"
+      >Grid</button>
     </div>
   </header>
 
-  <ul class="list-unstyled list-group">
+  <ul class="list-unstyled list-group"
+      ng-if="ac.mode=='list'">
     <li class="list-group-item"
 	ng-repeat="picture in ac.pictures">
       <div data-animal-image-link
@@ -17,4 +24,6 @@
       ></div>
     </li>
   </ul>
+
+  <h1 ng-if="ac.mode=='grid'">Grid</h1>
 </div>
