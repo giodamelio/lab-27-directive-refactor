@@ -11,7 +11,6 @@ Follow best practices with testing, by writing a separate test file for each of 
 App requirements: 6pts
  - Item Directive and tests
  - List Directive and tests
- - Require/Link Directive and tests
  - Form Directive and tests
  - Call to controller function
  - TESTS!
