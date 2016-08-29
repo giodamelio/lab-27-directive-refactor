@@ -25,5 +25,11 @@
     </li>
   </ul>
 
-  <h1 ng-if="ac.mode=='grid'">Grid</h1>
+  <div ng-if="ac.mode=='grid'">
+    <div ng-repeat="picture in ac.pictures" class="col-xs-2">
+      <img ng-src="{{ picture.thumbnail || picture.url }}"
+	   height="100"
+	   width="100" />
+    </div>
+  </div>
 </div>
