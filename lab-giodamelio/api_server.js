@@ -10,21 +10,11 @@ chance.mixin({ shortid: () => shortid.generate() });
 // Create fake data
 const data = {};
 
-// Create fake users
-data.users = [];
-for (let i = 1; i <= 10; i++) {
-  data.users.push({
-    id: chance.shortid(),
-    name: chance.name(),
-  });
-}
-
 // Create fake lists
 data.lists = [];
 for (let i = 1; i <= 100; i++) {
   data.lists.push({
     id: chance.shortid(),
-    userId: chance.pickone(data.users).id,
     title: chance.sentence({ words: 5 }).slice(0, -1),
   });
 }
