@@ -7,3 +7,8 @@ $fa-font-path: "~font-awesome/fonts";
 html, body {
   width: 100%;
 }
+
+// Make the navbars corners square
+nav.navbar {
+  border-radius: 0;
+}
