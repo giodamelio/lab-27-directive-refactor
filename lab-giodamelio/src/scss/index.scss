@@ -1,0 +1,17 @@
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap-sprockets.scss";
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+html, body {
+  width: 100%;
+}
+
+.inline {
+  display: inline;
+}
+
+header.margin-bottom {
+  margin-bottom: 1em;
+}
