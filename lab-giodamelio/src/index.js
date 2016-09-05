@@ -4,6 +4,4 @@ const angular = require('angular');
 require('!!file?name=[name].[ext]!./html/index.html'); // eslint-disable-line
 require('./scss/index.scss');
 
-const app = angular.module('image', []);
-
-require('./component')(app);
+const app = angular.module('notesApp', []);
