@@ -38,6 +38,7 @@ for (let i = 1; i <= 1000; i++) {
 // Create json server
 const server = jsonServer.create();
 server.use(jsonServer.defaults());
+server.use(jsonServer.rewriter({ '/api/': '/' }));
 server.use(jsonServer.router(data));
 server.listen(3000, () => {
   console.log('API is listening at http://localhost:3000/');
