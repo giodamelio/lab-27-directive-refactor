@@ -8,6 +8,7 @@ require('./scss/index.scss');
 const app = angular.module('todoApp', [angularRoute]);
 
 require('./services')(app);
+require('./components')(app);
 require('./view')(app);
 
 app.config(['$routeProvider', function($routeProvider) {

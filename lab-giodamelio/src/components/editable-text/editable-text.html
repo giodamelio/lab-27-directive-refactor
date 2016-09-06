@@ -1,0 +1,8 @@
+<div>
+  <div ng-if="!$ctrl.editing">{{ $ctrl.text }}</div>
+  <div ng-if="$ctrl.editing">
+    <input class="form-control"
+	   type="text"
+	   ng-model="$ctrl.text">
+  </div>
+</div>
