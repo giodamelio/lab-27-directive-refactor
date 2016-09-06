@@ -4,6 +4,12 @@ module.exports = function(app) {
       getAll() {
         return $http.get('/api/lists?_embed=items');
       },
+      update(listItem) {
+        return $http.patch(`/api/lists/${listItem.id}`, {
+          id: listItem.id,
+          title: listItem.title,
+        });
+      },
     };
   }]);
 };
