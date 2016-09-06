@@ -14,13 +14,25 @@
       <th>
 	<div ng-if="!list.editing">
 	  <button type="button"
-		  class="btn btn-primary btn-sm"
+		  class="btn btn-primary btn-xs"
 		  ng-click="list.editing=true">Edit</button>
 	</div>
 	<div ng-if="list.editing">
 	  <button type="button"
-		  class="btn btn-success btn-sm"
+		  class="btn btn-success btn-xs"
 		  ng-click="ctrl.updateList(list)">Save</button>
+	</div>
+      </th>
+      <th>
+	<div ng-if="!list.editing">
+	  <button type="button"
+		  class="btn btn-danger btn-xs"
+		  ng-click="ctrl.destroyList(list)">Delete</button>
+	</div>
+	<div ng-if="list.editing">
+	  <button type="button"
+		  class="btn btn-danger btn-xs"
+		  ng-click="">Cancel</button>
 	</div>
       </th>
     </tr>

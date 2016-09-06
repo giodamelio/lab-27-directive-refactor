@@ -10,6 +10,9 @@ module.exports = function(app) {
           title: listItem.title,
         });
       },
+      destroy(listItem) {
+        return $http.delete(`/api/lists/${listItem.id}`);
+      },
     };
   }]);
 };

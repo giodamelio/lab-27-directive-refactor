@@ -16,9 +16,18 @@ module.exports = function(app) {
     // Save a list to the server
     this.updateList = (list) =>
       lists.update(list)
-	.then((response) => {
-          list.editing = false;
-          $log.log(`List (id:${response.data.id}) updated`);
-	});
+      .then((response) => {
+        list.editing = false;
+        $log.log(`List (id:${response.data.id}) updated`);
+      });
+
+    // Delete a list from the server
+    this.destroyList = (list) =>
+      lists.destroy(list)
+      .then(() => {
+        const index = this.lists.findIndex((l) => l.id === list.id);
+        this.lists.splice(index, 1);
+        $log.log(`Destroyed list (id: ${list.id})`);
+      });
   }]);
 };
