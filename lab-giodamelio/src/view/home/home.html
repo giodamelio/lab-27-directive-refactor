@@ -1,5 +1,12 @@
 <div>
-  <ul>
-    <li ng-repeat="list in ctrl.lists">{{ list.title }}</li>
-  </ul>
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Competed Items</th>
+    </tr>
+    <tr ng-repeat="list in ctrl.lists">
+      <td>{{ list.title }}</td>
+      <td>{{ ctrl.getCompletedItems(list).length }}/{{ list.items.length }}</td>
+    </tr>
+  </table>
 </div>
